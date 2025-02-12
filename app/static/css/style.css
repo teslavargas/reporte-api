@@ -1,0 +1,15 @@
+/* app/static/css/style.css */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Ejemplo de efecto de transición para enlaces */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Personaliza el color de fondo del header y footer si lo deseas */
+header,
+footer {
+  background-color: #1f2937; /* Un gris un poco más claro */
+}
