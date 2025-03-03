@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Reporte Minoritario API - Inicio</title>
-    <!-- Tailwind CSS vía CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <!-- Estilos personalizados opcionales -->
     <link href="/static/css/style.css" rel="stylesheet" />
   </head>
   <body class="bg-gray-900 text-gray-200">
-    <!-- Header -->
     <header class="bg-gray-800 shadow-lg">
       <div
         class="container mx-auto px-4 py-6 flex justify-between items-center"
@@ -37,7 +34,7 @@
             </li>
             <li>
               <a
-                href="/data/full/normalized/episode/1"
+                href="/episode/1"
                 class="text-blue-400 hover:text-blue-600 transition-colors"
                 >Ejemplo de Endpoint</a
               >
@@ -46,8 +43,6 @@
         </nav>
       </div>
     </header>
-
-    <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
       <div class="bg-gray-800 rounded-lg shadow-lg p-8">
         <h2 class="text-2xl font-semibold mb-4">
@@ -78,20 +73,11 @@
           <p class="text-sm text-gray-400">
             Para consultar un episodio, utiliza la siguiente ruta:
             <span class="font-mono bg-gray-600 px-2 py-1 rounded"
-              >/data/full/normalized/episode/&lt;número&gt;</span
+              >/episode/&lt;número&gt;</span
             >
           </p>
         </div>
       </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 shadow-inner">
-      <div
-        class="container mx-auto px-4 py-4 text-center text-sm text-gray-500"
-      >
-        © 2025 Reporte Minoritario API. Todos los derechos reservados.
-      </div>
-    </footer>
   </body>
 </html>

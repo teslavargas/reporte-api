@@ -1,4 +1,3 @@
-# app/main.py
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -6,8 +5,8 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from app.scraping import scrape_full
-from app.normalization import normalize_full_episode
+from .scraping import scrape_full
+from .normalization import normalize_full_episode
 
 app = FastAPI(
     title="Reporte Minoritario API",
@@ -36,11 +35,12 @@ async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 # Endpoint principal que expone los datos normalizados de un episodio
-@app.get("/data/full/normalized/episode/{episode}")
+@app.get("/episode/{episode}")
 def get_full_normalized_episode(episode: int):
     full_data = scrape_full(episode)
     normalized = normalize_full_episode(full_data)
     return normalized
 
+# Ejecutar solo si el script se ejecuta directamente
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
